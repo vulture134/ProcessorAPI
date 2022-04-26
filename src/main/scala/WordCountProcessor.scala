@@ -1,14 +1,12 @@
-import org.apache.kafka.streams.kstream.ValueTransformerWithKey
-import org.apache.kafka.streams.kstream.ValueTransformerWithKeySupplier
-import org.apache.kafka.streams.processor.{ProcessorContext, PunctuationType, api}
-import org.apache.kafka.streams.processor.api.{Processor, ProcessorSupplier}
-import org.apache.kafka.streams.state.{KeyValueIterator, KeyValueStore, StoreBuilder, Stores}
-import domain.{Key, Serde, Stocks}
-import org.apache.kafka.streams.{KafkaStreams, KeyValue, StreamsConfig, Topology}
+import org.apache.kafka.streams.processor.api.Processor
+import org.apache.kafka.streams.processor.{ProcessorContext, PunctuationType}
 import org.apache.kafka.streams.scala.serialization.Serdes
+import org.apache.kafka.streams.state.{KeyValueIterator, KeyValueStore, StoreBuilder, Stores}
+import org.apache.kafka.streams.{KafkaStreams, KeyValue, StreamsConfig, Topology}
 
 import java.time.Duration
 import java.util.{Locale, Properties}
+
 
 class WordCountProcessor extends Processor[String, String, String, String]{
 
