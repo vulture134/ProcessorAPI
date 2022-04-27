@@ -7,6 +7,7 @@ import org.apache.kafka.streams.{KafkaStreams, KeyValue, StreamsConfig, Topology
 import java.time.Duration
 import java.util.{Locale, Properties}
 
+
 class WordCountProcessor extends Processor[String, String, String, String]{
 
   var kvStore: KeyValueStore[String, Int] = null
